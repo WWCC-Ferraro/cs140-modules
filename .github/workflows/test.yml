@@ -1,0 +1,23 @@
+# Runs the tests on every push, so you see pass/fail each time.
+# The same command runs locally: npm test
+#
+# This assignment adds one step before the tests: once you commit a
+# package-lock.json, `npm ci` installs exactly what it says, and stops with an
+# error if it and package.json disagree. After the tests, the program runs on
+# the sample log, so a dependency that is not really installed shows up here.
+name: tests
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install exactly what the lockfile says
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci
+      - run: npm test
+      - name: Run the program on the sample log
+        run: node src/cli.js sample.log

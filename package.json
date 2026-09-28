@@ -1,0 +1,13 @@
+{
+  "name": "cs140-modules",
+  "private": true,
+  "type": "module",
+  "description": "A study-log summarizer split into modules, with one pinned dependency",
+  "scripts": {
+    "test": "node --test",
+    "report": "node src/cli.js sample.log"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
