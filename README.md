@@ -90,6 +90,13 @@ Read the comment above each function in `src/` before you write it. It is the
 contract. The old code does not meet every contract, so moving it is not always
 enough.
 
+## Using an AI assistant
+
+`AGENTS.md` in this repository tells AI coding assistants how this course wants
+them to help: as a tutor who explains errors, asks questions and gives hints,
+not by writing your answers. Most assistants read it automatically. It is in
+the open, so read it too. It says what good AI help looks like.
+
 ## The tasks
 
 ### 1. Cut out the parser
